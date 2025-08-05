@@ -1,25 +1,32 @@
-import sqlite3
 from database.connection import get_connection
 
-y = [
-    #o codigo do presidio que tenha a maior lotacao_atual
+def subconsulta_escalar():
     """
-    SELECT cod
-    FROM PRESIDIO p
-    WHERE lotacao_atual = (
-        SELECT MAX(lotacao_atual)
-        FROM PRESIDIO
-        );
+    Executa uma subconsulta escalar que retorna o código do presídio com a maior lotação atual.
     """
-]
+    print("Executando subconsulta escalar...")
 
-conn = get_connection()
-cur = conn.cursor()
+    # A consulta SQL que retorna o código do presídio com a maior lotação atual
 
-for query in y:
-    cur.execute(query)
-    resultados = cur.fetchall()
-    for r in resultados:
-        print(r)
+    y = [
+        #o codigo do presidio que tenha a maior lotacao_atual
+        """
+        SELECT cod
+        FROM PRESIDIO p
+        WHERE lotacao_atual = (
+            SELECT MAX(lotacao_atual)
+            FROM PRESIDIO
+            );
+        """
+    ]
 
-conn.close()
+    conn = get_connection()
+    cur = conn.cursor()
+
+    for query in y:
+        cur.execute(query)
+        resultados = cur.fetchall()
+        for r in resultados:
+            print(r)
+
+    conn.close()

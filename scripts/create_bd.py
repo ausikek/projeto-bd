@@ -10,7 +10,7 @@ def create_tables():
         cur.execute(ddl)
     conn.commit()
     conn.close()
-    print("Tabelas criadas com sucesso.")
+    print(">> Tabelas criadas com sucesso.")
 
 if __name__ == "__main__":
     create_tables()

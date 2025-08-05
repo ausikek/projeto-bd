@@ -1,6 +1,3 @@
-#executar insert
-
-# imports
 import sqlite3
 from database.connection import get_connection
 from database.inserts import inserts, insert_queries, updates
@@ -8,9 +5,15 @@ from database.inserts import inserts, insert_queries, updates
 def execute_inserts():
     conn = None
     try:
-        # Conecta ao banco de dados usando a função do connection.py
         conn = get_connection()
         cursor = conn.cursor()
+
+        # Verifica se já existem dados na tabela PRESO
+        cursor.execute("SELECT 1 FROM PRESO LIMIT 1")
+        preso_exists = cursor.fetchall()
+        if preso_exists:
+            print("Tabela já foi semeada. Abortando inserções.")
+            return
 
         # Itera sobre o dicionário de inserts e executa as queries
         for table_name, data_list in inserts.items():
@@ -30,18 +33,14 @@ def execute_inserts():
                 (presidio_cod, cpf)
             )
 
-        # Confirma as alterações no banco de dados
         conn.commit()
         print("Inserções concluídas com sucesso.")
 
     except sqlite3.Error as e:
         print(f"Erro ao inserir dados: {e}")
         if conn:
-            conn.rollback()  # Desfaz as alterações em caso de erro
+            conn.rollback()
 
     finally:
         if conn:
             conn.close()
-
-if __name__ == '__main__':
-    execute_inserts()
