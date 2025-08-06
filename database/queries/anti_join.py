@@ -13,7 +13,7 @@ def anti_join_query():
         FROM FUNCIONARIO f
         JOIN MEDICO m ON f.cpf = m.cpf
         WHERE NOT EXISTS (
-            SELECT c.medico_cpf
+            SELECT 1
             FROM CONSULTA c
             WHERE c.medico_cpf = m.cpf
         )

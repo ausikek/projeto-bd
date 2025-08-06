@@ -12,7 +12,7 @@ def semi_join_query():
         SELECT pr.nome AS nome_preso
         FROM PRESO pr
         WHERE EXISTS (
-            SELECT po.preso_cpf
+            SELECT 1
             FROM POSSUI po
             WHERE po.preso_cpf = pr.cpf
         )
