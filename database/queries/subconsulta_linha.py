@@ -30,6 +30,6 @@ def subconsulta_linha():
         cur.execute(query)
         resultados = cur.fetchall()
         for r in resultados:
-            print(r)
+            print(f"CPF: {r[0]}, CRM: {r[1]}")
 
     conn.close()
