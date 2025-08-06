@@ -31,6 +31,6 @@ def subconsulta_linha():
         cur.execute(query)
         resultados = cur.fetchall()
         for r in resultados:
-            print(f"CPF: {r[0]}, CRM: {r[1]}")
+            print(f'CPF: {r[0]}\nCódigo: {r[1]}')  # Imprime os detalhes do médico
 
     conn.close()
