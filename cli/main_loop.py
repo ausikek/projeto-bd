@@ -1,6 +1,13 @@
 from scripts.exec_ins import execute_inserts
 from database.queries.subconsulta_escalar import subconsulta_escalar
 from database.queries.subconsulta_linha import subconsulta_linha
+from database.queries.groupby import groupby_query
+from database.queries.inner_join import inner_join_query
+from database.queries.left_join import left_join_query
+from database.queries.table_subquery import table_subquery
+from database.queries.union_query import union_query
+from database.queries.semi_join import semi_join_query
+from database.queries.anti_join import anti_join_query
 
 def loop():
     print('''
@@ -22,30 +29,23 @@ q - Sair
         if choice == '0':
             execute_inserts()
         elif choice == '1':
-            #anti_join()
-            print("Anti-join não implementado.")
+            anti_join_query()
         elif choice == '2':
             subconsulta_escalar()
         elif choice == '3':
             subconsulta_linha()
         elif choice == '4':
-            #table_subquery()
-            print("Subconsulta de tabela não implementada.")    
+            table_subquery()
         elif choice == '5':
-            #group_by()
-            print("Group by não implementado.")
+            groupby_query()
         elif choice == '6':
-            #inner_join()
-            print("Inner join não implementado.")
+            inner_join_query()
         elif choice == '7':
-            #left_join()
-            print("Left join não implementado.")
+            left_join_query()
         elif choice == '8':
-            #semi_join()
-            print("Semi join não implementado.")
+            semi_join_query()
         elif choice == '9':
-            #union()
-            print("Union não implementado.")
+            union_query()
         elif choice == 'q':
             print("Saindo do SGPCIn. Até logo...")
             break

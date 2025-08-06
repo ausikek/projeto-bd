@@ -8,14 +8,19 @@ inserts = {
         ('44444444444', 'Ana Oliveira', '1985-04-04', 'F', None),
         ('55555555555', 'Pedro Almeida', '1990-05-05', 'M', None),
         ('66666666666', 'Julia Costa', '1992-06-06', 'F', None),
+        ('77777777777', 'Marcos Silva', '1988-07-07', 'M', None),
+        ('88888888888', 'Laura Santos', '1991-08-08', 'F', None),
+        
     ],
     'diretor': [
         ('11111111111', 'DF-1'),
         ('22222222222', 'DF-2'),
+        ('77777777777', 'DF-3'),
     ],
     'presidio': [
         (1, 'Porto Alegre', 'Máxima', 500, 3, '11111111111'),
         (2, 'Charqueadas', 'Média', 800, 2, '22222222222'),
+        (3, 'Caxias do Sul', 'Baixa', 300, 1, '77777777777'),
     ],
     'cela': [
         (101, 1, 2, 2),  # num, presidio_cod, lotacao_max, lotacao_atual
@@ -29,6 +34,7 @@ inserts = {
     ],
     'medico': [
         ('44444444444', 'CRM-12345'),
+        ('88888888888', 'CRM-67890'),
     ],
     'advogado': [
         ('10101010101', 'Fernanda Lima', '1980-10-10', 'OAB-101'),
@@ -68,6 +74,8 @@ inserts = {
     ],
     'consulta': [
         ('77777777777', '44444444444', '2025-08-05', 'Paciente com lesões no corpo', 1),
+        ('88888888888', '44444444444', '2025-08-06', 'Paciente com febre alta', None),
+        
     ],
     'envolvido': [
         ('77777777777', 1), # preso_cpf, ocorrencia_cod

@@ -27,6 +27,6 @@ def subconsulta_escalar():
         cur.execute(query)
         resultados = cur.fetchall()
         for r in resultados:
-            print(r)
+            print(r[0])  # Imprime o código do presídio
 
     conn.close()
