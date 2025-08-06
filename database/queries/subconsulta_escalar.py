@@ -4,7 +4,7 @@ def subconsulta_escalar():
     """
     Executa uma subconsulta escalar que retorna o código do presídio com a maior lotação atual.
     """
-    print("Executando subconsulta escalar...")
+    print("Executando subconsulta escalar para obter o código do presídio com a maior lotação atual...")
 
     # A consulta SQL que retorna o código do presídio com a maior lotação atual
 

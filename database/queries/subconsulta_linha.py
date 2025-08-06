@@ -4,7 +4,7 @@ def subconsulta_linha():
     """
     Executa uma subconsulta de linha para obter o médico que realizou a última consulta.
     """
-    print("Subconsulta de linha: Médico da última consulta")
+    print("Executando subconsulta de linha para obter o médico da última consulta...")
     
     # Consulta SQL para obter o médico da última consulta
 
