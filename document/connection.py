@@ -1,10 +1,5 @@
 from pymongo.mongo_client import MongoClient
 
-client = MongoClient('localhost', 27017)
-
-try:
-    client.admin.command('ping')
-    
-    print("pong")
-except Exception as e:
-    print(e)
+def get_mongo_client():
+    client = MongoClient('localhost', 27017)
+    return client

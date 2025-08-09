@@ -1,7 +1,5 @@
-#funcao de conexão
 import sqlite3
-
-DB_FILE = "prisional.db"
+from config import DB_FILE
 
 def get_connection():
     conn = sqlite3.connect(DB_FILE)
