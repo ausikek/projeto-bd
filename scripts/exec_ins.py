@@ -1,6 +1,6 @@
 import sqlite3
-from database.connection import get_connection
-from database.inserts import inserts, insert_queries, updates
+from sql.connection import get_connection
+from sql.inserts import inserts, insert_queries, updates
 
 def execute_inserts():
     conn = None

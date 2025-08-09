@@ -1,7 +1,7 @@
 #criar o bd
 
-from database.connection import get_connection
-from database.schema import schema_statements
+from sql.connection import get_connection
+from sql.schema import schema_statements
 
 def create_tables():
     conn = get_connection()

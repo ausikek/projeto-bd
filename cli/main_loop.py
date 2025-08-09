@@ -1,13 +1,13 @@
 from scripts.exec_ins import execute_inserts
-from database.queries.subconsulta_escalar import subconsulta_escalar
-from database.queries.subconsulta_linha import subconsulta_linha
-from database.queries.groupby import groupby_query
-from database.queries.inner_join import inner_join_query
-from database.queries.left_join import left_join_query
-from database.queries.table_subquery import table_subquery
-from database.queries.union_query import union_query
-from database.queries.semi_join import semi_join_query
-from database.queries.anti_join import anti_join_query
+from sql.queries.subconsulta_escalar import subconsulta_escalar
+from sql.queries.subconsulta_linha import subconsulta_linha
+from sql.queries.groupby import groupby_query
+from sql.queries.inner_join import inner_join_query
+from sql.queries.left_join import left_join_query
+from sql.queries.table_subquery import table_subquery
+from sql.queries.union_query import union_query
+from sql.queries.semi_join import semi_join_query
+from sql.queries.anti_join import anti_join_query
 
 def loop():
     print('''

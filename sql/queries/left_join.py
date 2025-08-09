@@ -1,4 +1,4 @@
-from database.connection import get_connection
+from sql.connection import get_connection
 
 def left_join_query():
     """
