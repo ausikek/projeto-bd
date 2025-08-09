@@ -11,6 +11,3 @@ def create_tables():
     conn.commit()
     conn.close()
     print(">> Tabelas criadas com sucesso.")
-
-if __name__ == "__main__":
-    create_tables()
