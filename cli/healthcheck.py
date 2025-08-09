@@ -20,16 +20,15 @@ def healthcheck() -> bool:
             print(">>> Arquivo prisional.db encontrado e acessível.")
         else:
             print(">>> Arquivo prisional.db não encontrado ou não acessível.")
-    except Exception as e:
-        print(">>> Arquivo prisional.db não encontrado. Tentando criar novo arquivo...")
-        
-        try:
+            print(">>> Tentando criar arquivo prisional.db...")
+            
             with open(DB_FILE, 'w') as f:
                 f.write("")
             print(">>> Arquivo prisional.db criado com sucesso.")
-        except Exception as e:
-            print(f">>> Erro ao criar o arquivo prisional.db: {e}")
-            return False
+
+    except Exception as e:
+        print(f">>> Erro ao verificar prisional.db: {e}")
+        return False
 
     """Check the health of the SQL connection."""
     try:
