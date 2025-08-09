@@ -1,3 +1,4 @@
+from scripts.create_bd import create_tables
 from scripts.exec_ins import execute_inserts
 from sql.queries.subconsulta_escalar import subconsulta_escalar
 from sql.queries.subconsulta_linha import subconsulta_linha
@@ -9,7 +10,10 @@ from sql.queries.union_query import union_query
 from sql.queries.semi_join import semi_join_query
 from sql.queries.anti_join import anti_join_query
 
-def loop():
+
+def loop_sql():
+    create_tables()  # Cria as tabelas no banco de dados
+
     print('''
 0 - Semear o banco de dados
 1 - Consulta: anti-join
@@ -23,9 +27,11 @@ def loop():
 9 - Consulta: union
 q - Sair
           ''')
+    
+    sentinel = True
 
-    while True:
-        choice = input('Escolha uma opção: ')
+    while sentinel:
+        choice = input("~$ ")
         if choice == '0':
             execute_inserts()
         elif choice == '1':
@@ -47,7 +53,6 @@ q - Sair
         elif choice == '9':
             union_query()
         elif choice == 'q':
-            print("Saindo do SGPCIn. Até logo...")
-            break
+            sentinel = False
         else:
             print('Opção inválida. Tente novamente.')

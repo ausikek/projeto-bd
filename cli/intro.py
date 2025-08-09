@@ -1,8 +1,8 @@
-from scripts.create_bd import create_tables
+from cli.loop_choices import choices
+
 
 def intro():
     print('>> Iniciando SGPCIn...')
-    create_tables()  # Cria as tabelas no banco de dados
     print('>> Iniciando SGPCIn....')
     print('>> Iniciando SGPCIn..... OK!')
 
@@ -20,3 +20,5 @@ def intro():
   ░██████     ░█████░█ ░██           ░██████  ░██░██    ░██ 
                                                                                                                                                
           ''')
+    
+    choices()

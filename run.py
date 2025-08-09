@@ -1,9 +1,9 @@
-from cli.intro import intro
-from cli.main_loop import loop
+from cli.app_handler import handler
+
 
 def main():
-    intro()
-    loop()
+    handler()
+    
 
 if __name__ == "__main__":
     main()
