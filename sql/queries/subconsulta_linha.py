@@ -12,9 +12,10 @@ def subconsulta_linha():
         """
         SELECT *
         FROM MEDICO
-        WHERE cpf = (
-            SELECT medico_cpf
-            FROM CONSULTA
+        WHERE (cpf, cod_crm) = (
+            SELECT medico_cpf, cod_crm
+            FROM MEDICO m
+            INNER JOIN CONSULTA c on m.cpf = c.medico_cpf
             WHERE data = (
                 SELECT MAX(data)
                 FROM CONSULTA

@@ -9,10 +9,14 @@ def table_subquery():
     # A consulta SQL que realiza um JOIN entre CONSULTA e FUNCIONARIO para mostrar médicos e suas consultas
     y = [
         """
-        SELECT c.data AS data_consulta, f.nome AS nome_medico, c.prontuario AS detalhes_prontuario
-        FROM CONSULTA c
-        JOIN FUNCIONARIO f ON c.medico_cpf = f.cpf
-        ORDER BY c.data DESC;
+        SELECT s.data_consulta, s.nome_medico, s.detalhes_prontuario
+        FROM (
+            SELECT c.data AS data_consulta, f.nome AS nome_medico, c.prontuario AS detalhes_prontuario
+            FROM CONSULTA c
+            JOIN MEDICO m ON c.medico_cpf = m.cpf
+            JOIN FUNCIONARIO f ON m.cpf = f.cpf
+        ) AS s
+        ORDER BY s.data_consulta DESC;
         """
     ]
 
