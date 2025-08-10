@@ -1,3 +1,4 @@
+from document.queries.REPORTA.reporta import reporta
 from document.queries.TRABALHA.trabalha import trabalha
 from document.queries.CONSULTA.consulta import consulta
 from document.queries.ENVOLVIDO.envolvido import envolvido
@@ -7,7 +8,7 @@ def loop_mongo_choices():
 1 - Relacionamento TRABALHA (Nome dos funcionários que trabalham no presídio)
 2 - Relacionamento CONSULTA (Nome dos médicos que atenderam na data)
 3 - Relacionamento ENVOLVIDO (Nome dos envolvidos na ocorrência)
-4 - TODO
+4 - Relacionamento REPORTA (Nome das ocorrências reportadas por um agente)
 5 - TODO
 r - Retornar
             ''')
@@ -32,7 +33,9 @@ def loop_mongo():
             loop_mongo_choices()
 
         elif choice == '4':
-            print("Opção 4 ainda não implementada.")
+            reporta()
+            loop_mongo_choices()
+
         elif choice == '5':
             print("Opção 5 ainda não implementada.")
         elif choice == 'r':
