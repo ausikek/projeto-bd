@@ -8,7 +8,7 @@ def menu():
     sentinel = True
 
     while sentinel:
-        if choice == '0':
+        if choice == 'q':
             sentinel = False
             print("Saindo do SGPCIn. Até logo...")            
         elif choice == '1':

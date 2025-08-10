@@ -25,7 +25,7 @@ def loop_sql():
 7 - Consulta: left-join
 8 - Consulta: semi-join
 9 - Consulta: union
-q - Sair
+r - Retornar
           ''')
     
     sentinel = True
@@ -52,7 +52,7 @@ q - Sair
             semi_join_query()
         elif choice == '9':
             union_query()
-        elif choice == 'q':
+        elif choice == 'r':
             sentinel = False
         else:
             print('Opção inválida. Tente novamente.')
