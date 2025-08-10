@@ -40,10 +40,10 @@ O projeto permite executar operações como inserção, atualização e consulta
 ## 📁 Estrutura do projeto
 
 - `cli/`: contém os comandos de linha de comando (interface do usuário).
-- `document`: contém scripts de conexão e manipulação do banco MongoDB
-- `img`: arquivos de imagem do esquema relacional
-- `model`: arquivo do programa EERCase
-- `pdf`: esquema lógico do projeto
+- `document/`: contém scripts de conexão e manipulação do banco MongoDB
+- `img/`: arquivos de imagem do esquema relacional
+- `model/`: arquivo do programa EERCase
+- `pdf/`: esquema lógico do projeto
 - `scripts/`: scripts auxiliares, possivelmente para popular o banco ou testes.
 - `sql/`: scripts de conexão e manipulação do banco de dados SQLite.
 - `run.py`: ponto de entrada principal do sistema.
