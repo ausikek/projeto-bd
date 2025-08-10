@@ -1,1 +1,2 @@
 DB_FILE = "prisional.db"
+MONGO_URI = "mongodb://root:example@localhost:27017/?authSource=admin"
