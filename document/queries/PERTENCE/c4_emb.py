@@ -2,27 +2,29 @@ from pymongo.database import Database
 
 def scenery_4(db: Database):
     """4) um documento embutindo vários documentos"""
-    ## Consulta: Quais os nomes dos funcionários que trabalham no presídio com id 404?
 
     presidios = db.presidios
 
     # Limpando as coleções
-
     presidios.drop()
 
+    # Inserindo presídio com documentos embutidos no campo 'celas'
     presidios.insert_one({
-    "_id": 404,
-    "cidade": "Jaboatão",
-    "nivel_seguranca": "Baixa",
-    "funcionarios": [
-        {"_id": "88888888888", "nome": "Eva"},
-        {"_id": "99999999999", "nome": "Felipe"}
-    ]
+        "_id": 404,
+        "cidade": "Jaboatão",
+        "nivel_seguranca": "Baixa",
+        "celas": [
+            {"_id": "22222222222", "lotacao_max": 10, "lotacao_atual": 3},
+            {"_id": "33333333333", "lotacao_max": 20, "lotacao_atual": 16}
+        ]
     })
 
-    doc = presidios.find_one({"_id": 404}, {"_id": 0, "funcionarios.nome": 1})
-    nomes = [f["nome"] for f in doc.get("funcionarios", [])]
+    # Consulta
+    doc = presidios.find_one(
+        {"_id": 404},
+        {"_id": 0, "celas._id": 1, "celas.lotacao_max": 1, "celas.lotacao_atual": 1}
+    )
 
-    print("Funcionários que trabalham no presídio com id 404;")
-    for nome in nomes:
-        print(nome)
+    print("Celas que pertencem ao presídio com id 404:")
+    for cela in doc.get("celas", []):
+        print(f"  - Cela ID: {cela['_id']}, Lotação: {cela['lotacao_atual']}/{cela['lotacao_max']}")
