@@ -20,6 +20,7 @@ def scenery_3(db: Database):
         "_id": "C6 2025-02-06",
         "data": "2025-02-06",
         "prontuario": "Paciente com fratura na perna",
+        "preso_cpf": "33556688441",
         "medico_ids": [breno_id, guilherme_id]
     })
 

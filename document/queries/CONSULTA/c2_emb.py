@@ -16,18 +16,21 @@ def scenery_2(db: Database):
         "_id": "C3 2025-08-09",
         "data": "2025-08-09",
         "prontuario": "Paciente com apendicite",
+        "preso_cpf": "13256487901",
         "medico": {"_id": "33333333333", "nome": "Dr. Diego P.", "cod_crm": "20468"}
     },
     {
         "_id": "C4 2025-08-09",
         "data": "2025-08-09",
         "prontuario": "Paciente com dores de cabeça",
+        "preso_cpf": "11223344556",
         "medico": {"_id": "44444444444", "nome": "Dr. Carlos R.", "cod_crm": "13579"}
     },
     {
         "_id": "C5 2025-03-04",
         "data": "2025-03-04",
         "prontuario": "Paciente com sintomas de gripe",
+        "preso_cpf": "99887766554",
         "medico": {"_id": "99999999999", "nome": "Dr. Gabriel G.", "cod_crm": "13579"}
     }
     ])
