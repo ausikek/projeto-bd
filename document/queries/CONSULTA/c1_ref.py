@@ -26,20 +26,30 @@ def scenery_1(db: Database):
         {"_id": "C1 2025-01-10", #identificador do mongodb
          "data": "2025-01-10", 
          "prontuario": "Paciente com febre", 
-         "medico_cpf": "11111111111"},
+         "medico_cpf": "11111111111",
+         "preso_cpf": "12345678912"},
 
         {"_id": "C2 2025-10-01", #identificador do mongodb
          "data": "2025-10-01", 
          "prontuario": "Paciente com lesões no corpo", 
-         "medico_cpf": "22222222222"}
+         "medico_cpf": "22222222222",
+         "preso_cpf": "98765432198"},
+
+        {"_id": "C7 2025-01-10", 
+         "data": "2025-01-10",
+         "prontuario": "Paciente com tosse", 
+         "medico_cpf": "11111111111",
+         "preso_cpf": "82645869163"}
     ])
 
-    cons = consultas.find_one({"data": "2025-01-10"})
+    cons = consultas.find({"data": "2025-01-10"}, {"medico_cpf": 1, "_id": 0})
+    cpfs = {doc["medico_cpf"] for doc in cons}
     
-    if cons:
-        print(f"Consultas encontradas: {cons['_id']} com médico de cpf {cons['medico_cpf']}")
+    if cpfs:
+        print(f"Consultas encontradas para médicos com CPFs: {', '.join(cpfs)}")
     else:
         print("Não há consultas nessa data.")
+        return
 
     cursor = medicos.find({"_id": cons["medico_cpf"]}, {"_id": 0, "nome": 1})
 

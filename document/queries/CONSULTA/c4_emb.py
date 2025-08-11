@@ -13,6 +13,7 @@ def scenery_4(db: Database):
     consultas.insert_one({
         "_id": "Consultas 2025-05-07",
         "data": "2025-05-07",
+        "preso_cpf": "22447766889",
         "medicos": [
             {"_id": "77777777777", "nome": "Dr. Robson F.", "cod_crm": "54321"},
             {"_id": "88888888888", "nome": "Dr. Felipe C.", "cod_crm": "98765"}
