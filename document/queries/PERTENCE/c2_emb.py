@@ -1,6 +1,6 @@
 from pymongo.database import Database
 
-def scenery_2_corrected(db: Database):
+def scenery_2(db: Database):
     """2) um documento embutindo apenas um documento"""
     ## Consulta: Quais as lotações das celas que pertencem ao presídio com id 202?
 
