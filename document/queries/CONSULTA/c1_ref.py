@@ -51,7 +51,7 @@ def scenery_1(db: Database):
         print("Não há consultas nessa data.")
         return
 
-    cursor = medicos.find({"_id": cons["medico_cpf"]}, {"_id": 0, "nome": 1})
+    cursor = medicos.find({"_id": {"$in": list(cpfs)}}, {"_id": 0, "nome": 1})
 
     nomes = [d["nome"] for d in cursor]
     
